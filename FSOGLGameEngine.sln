@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{BCE0C22C-FBF7-46CE-A797-F79E8F64BB2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDaemon.GameEngine.Core", "LagDaemon.GameEngine.Core\LagDaemon.GameEngine.Core.csproj", "{DEA20028-EEFA-4048-8675-637FC435D2FB}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCE0C22C-FBF7-46CE-A797-F79E8F64BB2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCE0C22C-FBF7-46CE-A797-F79E8F64BB2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCE0C22C-FBF7-46CE-A797-F79E8F64BB2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCE0C22C-FBF7-46CE-A797-F79E8F64BB2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEA20028-EEFA-4048-8675-637FC435D2FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEA20028-EEFA-4048-8675-637FC435D2FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEA20028-EEFA-4048-8675-637FC435D2FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEA20028-EEFA-4048-8675-637FC435D2FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
