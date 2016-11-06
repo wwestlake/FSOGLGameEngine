@@ -12,7 +12,12 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-            Game game = new Game(new GameWindow(800, 600));
+            var game = new Game(new GameWindow(800, 600));
+
+            game.AddObject(new TestGameObject());
+
+            game.Run();
+            
         }
     }
 }

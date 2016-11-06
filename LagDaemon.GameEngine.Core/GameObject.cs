@@ -47,6 +47,7 @@ namespace LagDaemon.GameEngine.Core
         public void AddGameObject(GameObject obj)
         {
             children.Add(obj);
+            obj.OnInitialize();
         }
 
         public void RemoveObject(GameObject obj)
