@@ -8,7 +8,14 @@ namespace LagDaemon.GameEngine.Core
 {
     public abstract class GameObject
     {
+        protected Guid id;
         protected List<GameObject> children = new List<GameObject>();
+        protected Transform transform = Transform.Default();
+
+        public GameObject()
+        {
+
+        }
 
         public abstract void OnLoad();
         public abstract void OnDestroy();
@@ -32,6 +39,27 @@ namespace LagDaemon.GameEngine.Core
             return Find<T>(x => true);
         }
 
+        public IEnumerable<GameObject> All()
+        {
+            return children;
+        }
 
+        public void AddGameObject(GameObject obj)
+        {
+            children.Add(obj);
+        }
+
+        public void RemoveObject(GameObject obj)
+        {
+            children.Remove(obj);
+        }
+
+        public Transform Transform
+        {
+            get
+            {
+                return transform;
+            }
+        }
     }
 }

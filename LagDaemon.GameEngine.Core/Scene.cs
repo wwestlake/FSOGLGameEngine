@@ -6,53 +6,33 @@ using System.Threading.Tasks;
 
 namespace LagDaemon.GameEngine.Core
 {
-    public class Scene
+    public class Scene : GameObject
     {
         private string _name;
-        private List<GameObject> _sceneGraph = new List<GameObject>();
 
-        public Scene(string name)
+        public Scene(string name) : base()
         {
             _name = name;
         }
 
-        /// <summary>
-        /// Returns all of the objects from the scene graph of type T
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public IEnumerable<T> Find<T>(Func<T, bool> predicate) where T : GameObject
+        public override void OnDestroy()
         {
-            foreach (var child in _sceneGraph)
-            {
-                if (typeof(T) == child.GetType() && predicate(child as T))
-                {
-                    yield return child as T;
-                    yield return child.Find<T>(predicate) as T;
-                }
-
-            }
+            foreach (var child in children) child.OnDestroy();
         }
 
-        public IEnumerable<T> Find<T>() where T : GameObject
+        public override void OnInitialize()
         {
-            return Find<T>(x => true);
+            foreach (var child in children) child.OnInitialize();
         }
 
-        public IEnumerable<GameObject> All()
+        public override void OnLoad()
         {
-            return _sceneGraph;
+            foreach (var child in children) child.OnLoad();
         }
 
-        public void AddGameObject(GameObject obj)
+        public override void OnUpdate(double deltaTime)
         {
-            _sceneGraph.Add(obj);
+            foreach (var child in children) child.OnUpdate(deltaTime);
         }
-
-        public void RemoveObject(GameObject obj)
-        {
-            _sceneGraph.Remove(obj);
-        }
-
     }
 }
