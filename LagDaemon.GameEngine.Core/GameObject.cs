@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace LagDaemon.GameEngine.Core
 {
+    [Serializable]
     public abstract class GameObject
     {
         protected Guid id;
         protected List<GameObject> children = new List<GameObject>();
         protected Transform transform = Transform.Default();
+        protected GameObject parent;
 
         public GameObject()
         {
-
+            id = Guid.NewGuid();
         }
 
         public abstract void OnLoad();
@@ -24,7 +26,8 @@ namespace LagDaemon.GameEngine.Core
 
         public IEnumerable<T> Find<T>(Func<T,bool> predicate) where T: GameObject
         {
-            foreach (var child in children)
+            if (parent != null) yield return parent.Find<T>(predicate) as T;
+            else foreach (var child in children)
             {
                 if (typeof(T) == child.GetType() && predicate(child as T))
                 {
@@ -44,15 +47,24 @@ namespace LagDaemon.GameEngine.Core
             return children;
         }
 
-        public void AddGameObject(GameObject obj)
+        public void AddGameObject<T>(T obj) where T: GameObject
         {
-            children.Add(obj);
-            obj.OnInitialize();
+            var check = Find<T>(x => x.id == obj.id);
+            if (check == null)
+            {
+                obj.parent = this;
+                children.Add(obj);
+                obj.OnInitialize();
+            } else
+            {
+                //log the error condition as a warning
+            }
         }
 
         public void RemoveObject(GameObject obj)
         {
-            children.Remove(obj);
+            if (children.Contains(obj))
+                children.Remove(obj);
         }
 
         public Transform Transform

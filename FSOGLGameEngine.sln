@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDaemon.GameEngine.Core",
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LagDaemon.GameEngine.ResourceCompiler", "LagDaemon.GameEngine.ResourceCompiler\LagDaemon.GameEngine.ResourceCompiler.fsproj", "{5F3F7FFA-8E69-4FA4-9792-620FB2A38871}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDaemon.GameEngine.DAL", "LagDaemon.GameEngine.DAL\LagDaemon.GameEngine.DAL.csproj", "{BE8199F9-3F86-4DB8-84B1-6B46E392A969}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDaemon.GameEngine.Security", "LagDaemon.GameEngine.Security\LagDaemon.GameEngine.Security.csproj", "{6C0A6F18-7B71-4513-9F79-FB64F2551ECC}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GameRunner", "GameRunner\GameRunner.fsproj", "{CFAD42CA-CBB2-4349-96BC-6E2A5C902561}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +33,18 @@ Global
 		{5F3F7FFA-8E69-4FA4-9792-620FB2A38871}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F3F7FFA-8E69-4FA4-9792-620FB2A38871}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F3F7FFA-8E69-4FA4-9792-620FB2A38871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE8199F9-3F86-4DB8-84B1-6B46E392A969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE8199F9-3F86-4DB8-84B1-6B46E392A969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE8199F9-3F86-4DB8-84B1-6B46E392A969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE8199F9-3F86-4DB8-84B1-6B46E392A969}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C0A6F18-7B71-4513-9F79-FB64F2551ECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C0A6F18-7B71-4513-9F79-FB64F2551ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C0A6F18-7B71-4513-9F79-FB64F2551ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C0A6F18-7B71-4513-9F79-FB64F2551ECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFAD42CA-CBB2-4349-96BC-6E2A5C902561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFAD42CA-CBB2-4349-96BC-6E2A5C902561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFAD42CA-CBB2-4349-96BC-6E2A5C902561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFAD42CA-CBB2-4349-96BC-6E2A5C902561}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
